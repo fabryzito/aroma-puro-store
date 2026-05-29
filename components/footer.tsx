@@ -28,8 +28,7 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>WhatsApp: +54 11 3029-2701</li>
-              <li>Trancas Tucuman, Argentina</li>
-               <li>Gmail: gonzalezzitofabrizzio@gmail.com</li>
+              <li>Buenos Aires, Argentina</li>
             </ul>
           </div>
 
@@ -39,7 +38,8 @@ export function Footer() {
               Horarios
             </h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Lunes a Sabado: 09:00 - 23:00</li>
+              <li>Lunes a Viernes: 10:00 - 20:00</li>
+              <li>Sábados: 10:00 - 18:00</li>
               <li>Domingos: Cerrado</li>
             </ul>
           </div>

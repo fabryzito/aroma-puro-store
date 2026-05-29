@@ -23,19 +23,32 @@ export function PromoSection() {
     const tube = tubes.find((t) => t.id === tubeId);
     
     if (bodySplash && tube) {
-      // Add as a promo item with combined price
       addToCart({
         id: `promo-${bodySplashId}-${tubeId}`,
         name: `PROMO: ${bodySplash.name} + ${tube.name}`,
         description: `Body Splash ${bodySplash.name} 250ml + Tubito ${tube.name} 35ml`,
         notes: [...bodySplash.notes.slice(0, 2), ...tube.notes.slice(0, 2)],
-        price: 30000,
-        originalPrice: 35000,
+        price: 29000,
+        originalPrice: 29000,
         size: "250ml + 35ml",
         image: bodySplash.image,
         category: "body-splash",
       });
     }
+  };
+
+  const handleAddTwoTubes = () => {
+    addToCart({
+      id: "promo-2-tubes",
+      name: "PROMO: 2 Tubitos Arabe",
+      description: "2 Tubitos Arabe de 35ml a eleccion",
+      notes: ["Khamrah o Asad", "A eleccion"],
+      price: 7000,
+      originalPrice: 8000,
+      size: "2 x 35ml",
+      image: "/products/khamrah-tube.jpg",
+      category: "tube",
+    });
   };
 
   return (
@@ -54,7 +67,7 @@ export function PromoSection() {
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
             Llevate un Body Splash de 250ml + un Tubito Arabe de 35ml por solo{" "}
-            <span className="text-primary font-bold">{formatPrice(30000)}</span>
+            <span className="text-primary font-bold">{formatPrice(29000)}</span>
           </p>
         </div>
 
@@ -95,13 +108,10 @@ export function PromoSection() {
               </p>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl font-bold text-primary">
-                  {formatPrice(30000)}
-                </span>
-                <span className="text-muted-foreground line-through">
-                  {formatPrice(35000)}
+                  {formatPrice(29000)}
                 </span>
                 <span className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full font-semibold">
-                  -14%
+                  Combo
                 </span>
               </div>
               <Button
@@ -149,13 +159,10 @@ export function PromoSection() {
               </p>
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-2xl font-bold text-primary">
-                  {formatPrice(30000)}
-                </span>
-                <span className="text-muted-foreground line-through">
-                  {formatPrice(35000)}
+                  {formatPrice(29000)}
                 </span>
                 <span className="bg-primary/20 text-primary text-xs px-2 py-1 rounded-full font-semibold">
-                  -14%
+                  Combo
                 </span>
               </div>
               <Button
@@ -170,9 +177,42 @@ export function PromoSection() {
 
         {/* Tubitos individuales */}
         <div className="mt-12">
-          <h3 className="font-serif text-2xl font-bold text-foreground text-center mb-8">
-            Tubitos Araba 35ml
+          <h3 className="font-serif text-2xl font-bold text-foreground text-center mb-4">
+            Tubitos Arabe 35ml
           </h3>
+          <p className="text-center text-muted-foreground mb-8">
+            <span className="text-primary font-bold">{formatPrice(4000)}</span> cada uno o{" "}
+            <span className="text-primary font-bold">2 x {formatPrice(7000)}</span>
+          </p>
+          
+          {/* Promo 2 tubitos */}
+          <div className="max-w-md mx-auto mb-8">
+            <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/30">
+              <CardContent className="p-4 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <Gift className="h-5 w-5 text-primary" />
+                  <div>
+                    <p className="font-semibold text-foreground">2 Tubitos Arabe</p>
+                    <p className="text-xs text-muted-foreground">Khamrah o Asad a eleccion</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="text-right">
+                    <span className="text-lg font-bold text-primary">{formatPrice(7000)}</span>
+                    <span className="text-xs text-muted-foreground line-through ml-2">{formatPrice(8000)}</span>
+                  </div>
+                  <Button
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90 text-primary-foreground"
+                    onClick={handleAddTwoTubes}
+                  >
+                    Agregar
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {tubes.map((tube) => (
               <Card key={tube.id} className="bg-card border-border hover:border-primary/50 transition-all overflow-hidden">
