@@ -99,17 +99,7 @@ export const bodySplashes: Perfume[] = [
     image: "/products/khamrah.jpg",
     category: "body-splash",
   },
-  {
-    id: "ameer-al-arab",
-    name: "Ameer Al Arab Imperium",
-    description: "El príncipe de las fragancias árabes. Una composición real que combina frescura marina con notas amaderadas profundas.",
-    notes: ["Bergamota", "Lavanda", "Madera de cedro", "Ámbar"],
-    price: 25000,
-    originalPrice: 30000,
-    size: "250ml",
-    image: "/products/ameer-al-arab.jpg",
-    category: "body-splash",
-  },
+ 
   {
     id: "hayaati-black",
     name: "Hayaati Black",
